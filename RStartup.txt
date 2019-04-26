@@ -1,0 +1,9 @@
+R에서 자주 사용하는 패키지는 특정 파일에 그 내용을 삽입하여 시작할 때 불러들일 수 있다.
+윈도우인 경우, 파일의 이름은 Rporfile.site이며,
+이 파일의 위치는 C:\Program Files\R\R-n.n.n\etc이다. 이 파일은 R이 시작할 때 환경을 설정하는
+파일로 도움말 키워드 Startup를 검색하면 자세히 알 수 있다. 만일 R을 시작할 때 
+KoNLP, wordcloud, Rfacebook 패키지를 모두 로드하려면 다음과 같이 Rprofile.site 파일 끝에 
+아래의 내용을 추가한다.
+
+options(defaultPackages=c(getOption("defaultPackages"), "KoNLP", "wordcloud", "Rfacebook"))
+

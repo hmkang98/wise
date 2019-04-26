@@ -1,0 +1,19 @@
+install.packages("openxlsx")
+library("openxlsx")
+setwd("c:/temp/")
+rsample <- read.xlsx("Rsample.xlsx",3)
+dimnames(rsample)[[2]]
+
+table(rsample$성별)
+prop.table(table(rsample$성별))
+
+table(rsample$성별,rsample$Total) 
+prop.table(table(rsample$성별,rsample$Total))
+chisq.test(rsample$성별,rsample$Total)
+
+typeof(rsample$맥박_max)
+
+table(rsample$진료과)
+t.test(as.numeric(맥박_max) ~ 성별,data=rsample,na.rm=T,var.equal=T)
+summary(as.numeric(rsample$맥박_max),na.rm=T)
+oneway.test(as.numeric(맥박_max) ~ Total,data=rsample,var.equal=T)
